@@ -19,7 +19,7 @@
         </p>
     </header>
 
-    <div class="mt-4 overflow-y-auto max-h-72">
+    <div class="mt-4">
         <Details title="Internal Links" urls={responseData.internalURLs} />
         <Details title="External Links" urls={responseData.externalURLs} />
     </div>
