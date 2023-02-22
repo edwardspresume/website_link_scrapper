@@ -5,9 +5,6 @@
     const validUrlPattern =
         /^(?:https?:\/\/)?(?:[\w-]+\.)+[\w-]+(?:\/[\w-]*)*$/;
 
-    // Define the protocol pattern
-    const protocolPattern = /^https?:\/\/(www\.)?/;
-
     function validateUrl(event) {
         // Get the input element and its value
         const input = event.target;
@@ -29,10 +26,6 @@
 
         input.setCustomValidity('');
         input.invalid = false;
-
-        // Add the protocol to the URL if it's missing
-        const hasProtocol = protocolPattern.test(inputValue);
-        url = hasProtocol ? inputValue : `https://${inputValue}`;
     }
 </script>
 

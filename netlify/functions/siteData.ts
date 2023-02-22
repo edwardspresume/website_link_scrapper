@@ -3,7 +3,14 @@ import { Handler, HandlerEvent } from '@netlify/functions';
 import { singlePageCrawl } from '../../src/util';
 
 const handler: Handler = async (event: HandlerEvent) => {
-    const { url }: { url: string } = JSON.parse(event.body);
+    let url = JSON.parse(event.body).url;
+
+    // Define the protocol pattern
+    const protocolPattern = /^https?:\/\/(www\.)?/;
+
+    // Add the protocol to the URL if it's missing
+    const hasProtocol = protocolPattern.test(url);
+    url = hasProtocol ? url : `https://${url}`;
 
     const urlData = await singlePageCrawl(url);
 
