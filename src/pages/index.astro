@@ -1,15 +1,41 @@
 ---
+import RadioButton from '../components/RadioButton.astro';
+import SiteDataFetcher from '../components/SiteDataFetcher.svelte';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8' />
+        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+        <meta name='viewport' content='width=device-width' />
+        <meta name='generator' content={Astro.generator} />
+        <title>Website Link Scrapper</title>
+    </head>
+    <body>
+        <main class='max-w-lg p-3 mx-auto text-slate-100 pb-10'>
+            <h1 class='mb-16 text-3xl text-center mt-5'>Site URL Finder</h1>
+
+            <form>
+                <fieldset class='flex mb-5 gap-x-4' id='radio_btn_wrapper'>
+                    <RadioButton value='page' label='Single page' checked />
+                    <!-- <RadioButton value='site' label='Entire site' /> -->
+                </fieldset>
+
+                <SiteDataFetcher client:load />
+            </form>
+        </main>
+    </body>
 </html>
+
+<style>
+    body {
+        min-height: 100vh;
+        min-height: 100svh;
+        background-image: url('/src/assets/new.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-blend-mode: darken;
+        background-color: rgb(0 0 0 / 60%);
+    }
+</style>

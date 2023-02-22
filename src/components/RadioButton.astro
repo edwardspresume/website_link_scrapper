@@ -1,0 +1,14 @@
+---
+export type Props = {
+    label: string;
+    value: string;
+    checked?: boolean;
+};
+
+const { label, value, checked } = Astro.props;
+---
+
+<label class='inline-flex align-middle items-center gap-x-1'>
+    <input class='w-4 h-4' type='radio' name='page_or_site' {value} {checked} />
+    <span class='text-lg'>{label}</span>
+</label>
