@@ -1,22 +1,22 @@
-<div class='loading'>Loading</div>
+<div
+    class="absolute top-0 left-0 grid w-full h-full p-4 bg-black bg-opacity-60 place-items-center z-10"
+>
+    <span role="status" class="loading relative">Loading...</span>
+</div>
 
 <style>
     .loading {
-        width: 150px;
-        height: 150px;
-        line-height: 150px;
-        margin: 50px auto;
-        position: relative;
-        box-sizing: border-box;
-        text-align: center;
         z-index: 0;
+        width: 180px;
+        height: 180px;
+        line-height: 180px;
+        text-align: center;
         text-transform: uppercase;
     }
 
     .loading:before,
     .loading:after {
         opacity: 0;
-        box-sizing: border-box;
         content: '\0020';
         position: absolute;
         top: 0;

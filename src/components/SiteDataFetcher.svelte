@@ -36,6 +36,7 @@
     <Button label="Search" handleClick={fetchData} />
     <Button label="Clear Search" handleClick={clearSearch} />
 </div>
+<Loading />
 
 {#if $loadingStore}
     <Loading />
