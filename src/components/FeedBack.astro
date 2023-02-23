@@ -1,0 +1,90 @@
+---
+---
+
+<button
+    id='open_feebdack'
+    class='fixed bottom-0 right-0 p-2 -translate-x-1/2 rounded-t-lg left-1/2 bg-sky-600 w-fit'
+    >Feedback</button
+>
+
+<!-- create a module for feeback form -->
+<div
+    id='feedback_form_container'
+    class='absolute top-0 left-0 hidden w-full h-full p-4 bg-black bg-opacity-50 place-items-center'
+>
+    <form
+        class='max-w-md p-4 bg-white rounded-lg text-slate-900'
+        name='feedback_form'
+        action='POST'
+        method='POST'
+        data-netlify='true'
+        netlify-honeypot='bot-field'
+    >
+        <header class='flex justify-end mb-1'>
+            <button id='close_feedback'>
+                <svg
+                    class='w-6 h-6'
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                >
+                    <path
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M6 18L18 6M6 6l12 12'></path>
+                </svg>
+            </button>
+        </header>
+
+        <input name='bot-field' class='w-0 h-0 pointer-events-none bot_field' />
+
+        <p>
+            Let me know if you experience any issues or have any suggestions to
+            improve this site
+        </p>
+
+        <textarea
+            required
+            class='w-full p-2 my-6 border-2 rounded-lg border-neutral-300'
+            name='feedback'
+            id='feedback'
+            cols='30'
+            rows='10'></textarea>
+
+        <button type='submit' class='w-full p-2 text-white bg-black rounded-lg'
+            >Submit</button
+        >
+    </form>
+</div>
+
+<script>
+    const close_feedback = document.getElementById(
+        'close_feedback'
+    ) as HTMLElement;
+
+    const open_feebdack = document.getElementById(
+        'open_feebdack'
+    ) as HTMLElement;
+
+    open_feebdack.addEventListener('click', (e: MouseEvent) => {
+        e.preventDefault();
+
+        const feedback_form = document.getElementById(
+            'feedback_form_container'
+        ) as HTMLElement;
+
+        feedback_form.style.display = 'grid';
+    });
+
+    close_feedback.addEventListener('click', (e: MouseEvent) => {
+        e.preventDefault();
+
+        const feedback_form = document.getElementById(
+            'feedback_form_container'
+        ) as HTMLElement;
+
+        feedback_form.style.display = 'none';
+    });
+</script>

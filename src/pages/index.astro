@@ -1,4 +1,5 @@
 ---
+import FeedBack from '../components/FeedBack.astro';
 import RadioButton from '../components/RadioButton.astro';
 import SiteDataFetcher from '../components/SiteDataFetcher.svelte';
 ---
@@ -39,6 +40,8 @@ import SiteDataFetcher from '../components/SiteDataFetcher.svelte';
 
                 <SiteDataFetcher client:load />
             </form>
+
+            <FeedBack />
         </main>
     </body>
 </html>
